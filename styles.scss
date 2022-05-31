@@ -1,0 +1,160 @@
+@import "./_reset";
+@import "./mixin";
+@import "./variables";
+
+div {
+  font-size: calculate-rem(30);
+  @include flex(flex-end);
+}
+
+.header {
+  background-color: $purple;
+
+  &__informatives-top {
+    background-color: $darkPurple;
+    color: $white;
+    padding: 7px;
+
+    @include flex();
+
+    &--text {
+      @include flex(center, flex-end);
+
+      font-size: calculate-rem(12);
+      font-weight: 300;
+      text-transform: uppercase;
+
+      &::after {
+        content: "";
+        width: 1px;
+        height: 12px;
+        background-color: $white;
+        display: inline-block;
+
+        margin: 0 10px 0 5px;
+      }
+
+      &:last-child {
+        &::after {
+          display: none;
+        }
+      }
+    }
+
+    &--text-strong {
+      font-weight: 700;
+      margin: 0 5px;
+      text-transform: uppercase;
+
+      @include flex(center, flex-end);
+
+      font-size: calculate-rem(12);
+    }
+
+    &--text-margin {
+      margin-left: 5px;
+    }
+  }
+
+  &__informatives-wrapper {
+    max-width: 495px;
+    @include flex();
+    white-space: nowrap;
+  }
+
+  &__container {
+    @include container-center();
+    @include flex();
+  }
+
+  &__logo {
+    max-width: 238px;
+    width: 100%;
+    margin-right: 31px;
+
+    &--text {
+      font-size: calculator-rem(48);
+      font-family: "ovo", sans-serif;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: $white;
+    }
+  }
+
+  &__menu {
+    @include flex(space-between);
+    flex: 1;
+    margin: 0 31px;
+  }
+
+  &__menu-wrapper {
+    position: relative;
+  }
+
+  &__menu-department {
+    font-family: "Open Sans";
+    text-transform: uppercase;
+    color: $white;
+    font-size: calculator-rem(14);
+    text-decoration: none;
+    font-weight: 700;
+  }
+
+  &__menu1 {
+    position: absolute;
+    top: 200%;
+    left: 0;
+    max-width: 194px;
+    width: 194px;
+    height: 6px;
+    background-color: $darkPurple;
+  }
+
+  &__menu-items {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 100%;
+    left: 0;
+    max-width: 194px;
+    width: 100%;
+    background-color: $white;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+
+    a:hover {
+      width: 194px;
+      background-color: $hoverGrey;
+    }
+  }
+
+  &__menu-category {
+    color: $black;
+    font-size: calculator-rem(13);
+    text-decoration: none;
+
+    font-weight: 400;
+    line-height: 38px;
+    @include flex();
+    height: 40px;
+  }
+
+  &__wrapper-icons {
+    max-width: 135px;
+    width: 100%;
+  }
+
+  &__icons {
+    cursor: pointer;
+    &--image {
+      max-width: 25px;
+      max-height: 25px;
+      margin-right: 31px;
+
+      &:last-child {
+        &image {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}
